@@ -1,0 +1,93 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4a3vjykvdde3"]
+
+[ext_resource type="Script" uid="uid://cojkdcrhg3msy" path="res://start.gd" id="1_ots34"]
+[ext_resource type="StyleBox" uid="uid://bwpvod6tf85ok" path="res://themes/new_style_box_flat.tres" id="2_qn1rc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qn1rc"]
+bg_color = Color(0.811256, 0.497418, 0.53288, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.899872, 0.69715, 0.681193, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 25.0
+expand_margin_top = 5.0
+expand_margin_right = 25.0
+expand_margin_bottom = 5.0
+
+[node name="start" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ots34")
+
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_placeholder_color = Color(0.485719, 0.289844, 0.282172, 1)
+theme_override_colors/font_color = Color(0.486275, 0.290196, 0.282353, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("2_qn1rc")
+placeholder_text = "Name"
+alignment = 1
+
+[node name="ip" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.000868056
+anchor_top = 0.577932
+anchor_right = 1.00087
+anchor_bottom = 0.577932
+offset_top = -15.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_placeholder_color = Color(0.486275, 0.290196, 0.282353, 1)
+theme_override_colors/font_color = Color(0.486275, 0.290196, 0.282353, 1)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = ExtResource("2_qn1rc")
+placeholder_text = "IP address"
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 71.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 46
+text = "Tejaswas epix chat"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.502604
+anchor_top = 0.814815
+anchor_right = 0.502604
+anchor_bottom = 0.814815
+offset_left = -19.0
+offset_top = -31.0
+offset_right = 19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 76
+theme_override_styles/normal = SubResource("StyleBoxFlat_qn1rc")
+text = "Join"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

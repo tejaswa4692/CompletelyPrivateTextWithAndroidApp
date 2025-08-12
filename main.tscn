@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtb6n7e36wism"]
+
+[ext_resource type="Script" uid="uid://dgsj8a6kdl0vw" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.0732644, 0.0186612, 0.0107175, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.191693, 0.0769387, 0.0491856, 1)
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ChatLog" type="TextEdit" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/background_color = Color(0.526011, 0.360802, 0.275032, 1)
+theme_override_colors/font_readonly_color = Color(0.163847, 0.0809486, 0.0076974, 1)
+theme_override_font_sizes/font_size = 60
+editable = false
+context_menu_enabled = false
+wrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MessageInput" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 35
+placeholder_text = "message"
+
+[node name="SendButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 45
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+text = "Send"
